@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#ecf4e9"/>
+  <circle cx="492" cy="84" r="48" fill="#f8da8b"/>
+  <path d="M0 320Q150 140 300 290T600 250V400H0Z" fill="#7eaa82"/>
+  <path d="M0 360Q180 230 360 340T600 300V400H0Z" fill="#436a50"/>
+  <path d="M300 400Q260 310 360 270" fill="none" stroke="#e8d8b3" stroke-width="32"/>
+  <text x="40" y="100" fill="#264b37" font-family="Georgia,serif" font-size="36">Room to grow.</text>
+  <text x="40" y="140" fill="#46664c" font-family="Arial,sans-serif" font-size="18">Thoughtful care for your garden.</text>
+</svg>

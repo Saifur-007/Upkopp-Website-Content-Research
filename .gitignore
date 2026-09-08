@@ -1,0 +1,13 @@
+node_modules/
+tests/browser/generated/
+*.zip
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+
+dist/
+*.pem
+*.key
+*.crx

@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Capture verification fixture</title>
+<style>body{font:16px/1.5 system-ui;margin:24px}article{border:1px solid #888;padding:20px;margin:16px 0}.cards{display:grid;grid-template-columns:1fr 1fr}.nested{height:160px;overflow:auto;border:1px solid #888}.tall{height:900px}.image{width:100px;height:80px}footer{margin-top:24px}</style>
+</head><body>
+<header><nav><a href="/">Home</a> <a href="/services">Services</a></nav></header>
+<main>
+<h1>Garden &amp; care</h1><p>Exact punctuation: “£25”, café &amp; soil. <a href="/contact?service=garden">Contact us</a> today.</p>
+<div class="cards"><article id="one"><h3>First service</h3><p>Same wording.</p><img class="image" src="plant.svg" alt="First garden"><section><h4>Nested detail</h4><p>Inside the first service.</p></section><p>After nested detail.</p></article>
+<article id="two"><h3>Second service</h3><p>Same wording.</p><img class="image" src="plant.svg?two" alt="Second garden"></article></div>
+<div role="heading" aria-level="8">Explicit level eight</div>
+<ol start="3"><li>First item<ul><li>Nested item</li></ul></li><li>Next item</li></ol>
+<table><caption>Service prices</caption><tr><th scope="col">Service</th><th>Price</th></tr><tr><td rowspan="2">Garden care</td><td>£25</td></tr><tr><td>£30</td></tr></table>
+<dl><dt>Hours</dt><dd>Monday to Friday</dd></dl>
+<p id="safe"></p><input value="PRIVATE_FORM_VALUE"><div contenteditable="true">PRIVATE_EDITED_TEXT</div>
+<div id="dynamic"></div>
+</main><footer><p>Footer original wording.</p></footer>
+<script src="../../src/shared/capture-core.js"></script><script src="../../src/content/capture.js"></script>
+<script>
+document.getElementById('safe').textContent = '<img src=x onerror=alert(1)> is source text.';
+const mode = new URLSearchParams(location.search).get('case');
+const dynamic = document.getElementById('dynamic');
+if(mode === 'hidden') dynamic.innerHTML='<details><summary>FAQ question</summary><p>Hidden source answer.</p></details><iframe sandbox srcdoc="&lt;p&gt;Isolated embedded content&lt;/p&gt;" width="240" height="120"></iframe>';
+if(mode === 'nested') {dynamic.innerHTML='<div class="nested"><div class="tall"><p>Nested top.</p></div><p>Nested bottom.</p></div>';document.querySelector('.nested').scrollTop=75;}
+if(mode === 'shadow') {const box=document.createElement('div');dynamic.append(box);box.attachShadow({mode:'open'}).innerHTML='<section><h2>Shadow heading</h2><p>Open shadow content.</p></section>';}
+if(['dynamic','infinite','cancel','navigation'].includes(mode)) {
+  dynamic.innerHTML='<div class="tall"><p>Beginning of a long page.</p></div><article id="reused"><p>Virtual item zero.</p></article><div id="tail"></div>';
+  if(mode==='dynamic') {
+    setTimeout(()=>{const p=document.createElement('p');p.textContent='Delayed content appeared.';dynamic.prepend(p);},250);
+    let changed=false;window.addEventListener('scroll',()=>{if(scrollY>150&&!changed){changed=true;document.querySelector('#reused p').textContent='Virtual item one.';}});
+  }
+  if(mode==='infinite') window.addEventListener('scroll',()=>{const p=document.createElement('p');p.style.height='700px';p.textContent='Another feed item.';document.getElementById('tail').append(p);});
+}
+</script></body></html>

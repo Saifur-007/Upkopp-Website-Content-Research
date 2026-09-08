@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+<rect width="1280" height="640" fill="#f3f0ff"/>
+<path d="M920 0H1280V640H780Z" fill="#4A2BFA"/>
+<g transform="translate(64 64) scale(.14)" fill="#4A2BFA"><path d="M0 257.598 L44.2476 64.3994 L261.029 64.3994 L231.531 193.198 L159.27 193.198 L174.019 128.799 L101.759 128.799 L72.2602 257.598 Z"/><path d="M57.5116 321.997 L72.2604 257.597 L289.042 257.597 L333.29 64.3994 L261.03 64.3994 L275.778 0 L420.299 0 L346.552 321.997 Z"/></g>
+<g font-family="Poppins,Segoe UI,Arial,sans-serif" fill="#202737">
+<text x="140" y="102" font-size="36" font-weight="600">Upkopp</text>
+<text x="64" y="208" font-size="18" letter-spacing="2" fill="#655580">WEBSITE CONTENT RESEARCH</text>
+<text x="60" y="300" font-size="60" font-weight="600">Collect source material.</text>
+<text x="60" y="376" font-size="60" font-weight="600">Write with context.</text>
+<text x="64" y="460" font-size="23" fill="#596273">For copywriters, content strategists,</text>
+<text x="64" y="496" font-size="23" fill="#596273">and web designers preparing a rewrite.</text>
+<text x="64" y="584" font-size="16" fill="#655580">Original text · Page structure · Image references</text>
+</g>
+<g transform="translate(920 152)">
+<rect x="0" y="0" width="236" height="320" rx="16" fill="#8a74ff"/>
+<rect x="24" y="24" width="236" height="320" rx="16" fill="white"/>
+<g fill="#4A2BFA"><rect x="48" y="64" width="112" height="12" rx="4"/></g>
+<g fill="#e3ddff"><rect x="48" y="108" width="176" height="8" rx="4"/><rect x="48" y="128" width="152" height="8" rx="4"/><rect x="48" y="148" width="164" height="8" rx="4"/></g>
+<g fill="#ad9eff"><rect x="48" y="204" width="156" height="8" rx="4"/><rect x="72" y="228" width="132" height="8" rx="4"/><rect x="96" y="252" width="108" height="8" rx="4"/></g>
+</g></svg>

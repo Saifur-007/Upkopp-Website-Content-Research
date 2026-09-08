@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Upkopp · Content research</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="reports.css">
+    <script src="../shared/settings.js" defer></script>
+    <script src="../shared/research-core.js" defer></script>
+    <script src="icons.js" defer></script>
+    <script src="reports.js" defer></script>
+    <script src="context.js" defer>
+    </script>
+    <script src="../shared/capture-core.js" defer>
+    </script>
+    <script src="../shared/page-map-core.js" defer>
+    </script>
+    <script src="map-language.js" defer>
+    </script>
+    <script src="capture-view.js" defer>
+    </script>
+    <script src="map-view.js" defer>
+    </script>
+    <script src="app.js" defer>
+    </script>
+  </head>
+  <body>
+    <div class="uk-shell">
+      <aside class="uk-sidebar">
+        <header class="brand-header">
+          <img src="../../assets/logo.svg" width="24" height="24" alt="">
+          <h1>Upkopp</h1>
+        </header>
+        <nav class="uk-nav" aria-label="Content research">
+          <button data-report="content" aria-current="page">Content</button>
+          <button data-report="map" aria-current="false">Page map</button>
+          <button data-report="capture" aria-current="false">Text capture</button>
+          <button data-report="indexability" aria-current="false">Indexability</button>
+          <button data-report="social" aria-current="false">Social tags</button>
+          <button data-report="images" aria-current="false">Images</button>
+          <button data-report="settings" aria-current="false">Settings</button>
+        </nav>
+        <div class="uk-mobile-nav">
+          <label class="sr-only" for="uk-view-select">View</label>
+          <select id="uk-view-select">
+            <option value="content">Content</option>
+            <option value="map">Page map</option>
+            <option value="capture">Text capture</option>
+            <option value="indexability">Indexability</option>
+            <option value="social">Social tags</option>
+            <option value="images">Images</option>
+            <option value="settings">Settings</option>
+          </select>
+        </div>
+        <div class="uk-sidebar-bottom"><a href="../help/index.html" target="_blank" rel="noopener">Help &amp; privacy</a><br>Website content research<br>Made by Upkopp</div>
+      </aside>
+      <div class="uk-main">
+        <header class="uk-topbar">
+          <h2 id="uk-heading">Content</h2>
+          <div class="uk-actions">
+            <details id="uk-inspect" class="uk-menu">
+              <summary>Inspect <span aria-hidden="true">▾</span>
+              </summary>
+              <div class="uk-menu-items">
+                <button id="uk-refresh">Refresh content</button>
+                <button id="uk-source-toggle">Page details</button>
+                <button id="uk-workspace">Open larger window</button>
+                <button id="uk-sidepanel">Open side panel</button>
+              </div>
+            </details>
+            <button id="uk-export-json">Export JSON</button>
+            <button id="uk-capture" class="primary">Capture text</button>
+          </div>
+        </header>
+        <div class="uk-sourcebar" hidden>
+          <p id="uk-source">Open a website to begin</p>
+        </div>
+        <p id="uk-status" role="status" aria-live="polite">
+        </p>
+        <section id="uk-report" aria-label="Page content">
+        </section>
+        <p id="announcement" class="sr-only" role="status" aria-live="polite">
+        </p>
+        <div id="error" class="error" role="alert" hidden>
+        </div>
+        <section id="map-view" aria-label="Page map" hidden>
+          <div class="source">
+            <p id="map-title" class="title">Explore this page</p>
+            <p id="map-url" class="caption">
+            </p>
+          </div>
+          <button id="map-capture" class="primary">Capture text</button>
+          <p id="map-status" class="caption" role="status" aria-live="polite">Reading the page structure…</p>
+          <nav class="map-kinds" aria-label="Map type">
+            <button data-kind="headings" aria-pressed="true">Headings</button>
+            <button data-kind="landmarks" aria-pressed="false">Landmarks</button>
+            <button data-kind="sections" aria-pressed="false">Sections</button>
+          </nav>
+          <details id="map-tools">
+            <summary>Search and map tools</summary>
+            <label class="field" for="map-document">Document<select id="map-document">
+            </select>
+          </label>
+          <label class="field" for="map-search">Search the map<input id="map-search" type="search" placeholder="Find a heading or section">
+          </label>
+          <div class="map-actions">
+            <button id="map-refresh">Refresh</button>
+            <button id="map-copy">Copy map</button>
+            <button id="map-reveal" aria-pressed="false">Show on page</button>
+            <button id="map-top">Page top</button>
+          </div>
+          <label class="field" for="map-depth">Expand to level<select id="map-depth">
+            <option value="all">All levels</option>
+            <option value="0">Collapse all</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </label>
+      </details>
+      <p id="map-summary" class="caption">
+      </p>
+      <p id="map-notice" class="issue" hidden>
+      </p>
+      <button id="map-access" hidden>Allow this embedded site</button>
+      <div id="map-tree" aria-label="Document structure">
+      </div>
+      <button id="map-more" hidden>Show next 200 items</button>
+      <details id="map-settings">
+        <summary>Map settings</summary>
+        <div id="map-settings-fields">
+        </div>
+      </details>
+      <details id="map-help">
+        <summary>Help and shortcuts</summary>
+        <p>Use the arrow keys to move through the map. Enter scrolls to an item. Left and right collapse and expand branches. Home and End move to the first and last item.</p>
+        <p>Search keeps parent headings for context. Copy map copies the filtered outline, including collapsed branches. Text capture downloads the original page copy separately.</p>
+        <p>Warnings identify things to review; they are not a complete accessibility or SEO audit. Sections follows source containers, not the old HTML5 outlining algorithm.</p>
+        <p>Resize or move this native side panel using Chrome’s controls. Map display preferences are saved on this device.</p>
+        <div id="map-shortcuts">
+        </div>
+        <button id="map-reset-shortcuts">Reset shortcuts</button>
+        <p class="caption">These shortcuts work while the map has focus. The toolbar shortcut can be changed at chrome://extensions/shortcuts.</p>
+      </details>
+    </section>
+    <main id="content" hidden>
+    </main>
+    <footer>
+      <span>
+        <span class="brand-dot" aria-hidden="true">
+        </span>Processed on this device</span>
+        <span><span id="uk-version">Upkopp 1.0.0</span></span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
